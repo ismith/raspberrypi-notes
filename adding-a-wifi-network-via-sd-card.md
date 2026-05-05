@@ -2,7 +2,7 @@
 
 It's a bit hacky, but the easiest way to add a new WiFi network to an rpi whose known networks are elsewhere might be just editing the sd card from your laptop.
 
-First, if you're on a Mac, check out [ext4-for-osx.md].
+First, if you're on a Mac, check out [tools/ext4-for-osx.md].
 
 The partition you want is `rootfs`. At least as of Debian Trixie, on an rpi set up with Raspberry Pi Installer, wifi config is done in yamls in `etc/netplan`, which gets rendered at boot time into NetworkManager connection files. Those yamls are probably root-only.
 
