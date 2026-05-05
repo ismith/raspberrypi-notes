@@ -40,4 +40,7 @@ sudo anylinuxfs unmount /dev/$IDENTIFIER
 ```
 
 Note: per anylinuxfs docs:
-    It is needed to run mount commands with sudo otherwise we're not allowed direct access to /dev/disk* files. However, the virtual machine itself will in fact run under the regular user who invoked sudo in the first place (i.e. all unnecessary permissions are dropped after the disk is opened)
+
+    It is needed to run mount commands with sudo otherwise we're not allowed direct access to /dev/disk* files.
+    However, the virtual machine itself will in fact run under the regular user who invoked sudo in the first place
+    (i.e. all unnecessary permissions are dropped after the disk is opened)
