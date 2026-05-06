@@ -15,4 +15,4 @@ Password auth is less secure ... but on a shared resource, in some contexts, it 
 
 Edit `/etc/ssh/sshd_config`, changing `PasswordAuthentication no` to `yes` (or vice versa).
 
-You may also need to check `/etc/ssh/sshd_config.d/`, Raspberry Pi Installer likes to put stuff there.
+You may also need to check `/etc/ssh/sshd_config.d/50-cloud-init.conf`, Raspberry Pi Installer likes to put stuff there.
