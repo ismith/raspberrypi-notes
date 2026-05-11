@@ -17,7 +17,7 @@ and regardless, it is additional steps to remember and etc.
 By using the cloud-init approach, I'm only needing to edit bootfs, which Just Works out of the box on a Mac. (Vs rootfs, which needs extra steps.)
 
 The [https://www.raspberrypi.com/news/cloud-init-on-raspberry-pi-os/](https://www.raspberrypi.com/news/cloud-init-on-raspberry-pi-os/) is a major guide for this document,
-though there is also [the full raspberry pi module cloud-init documentation](https://docs.cloud-init.io/en/latest/reference/modules.html#raspberry-pi-configuration).
+though there is also [the upstream cloud-init documentation](https://docs.cloud-init.io/en/latest/reference/modules.html).
 
 ## Goals/Questions
 - [ ] what do I put on the sdcard for first boot (after using Raspberry Pi Imager)?
