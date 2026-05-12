@@ -31,4 +31,6 @@ though there is also [the upstream cloud-init documentation](https://docs.cloud-
   --cloudinit-networkconfig cloudinit/network-config \
   /path/to/raspios.img /dev/diskN` - but might be simpler to flash-then-edit `/boot/firmware/{user-data,network-config}`.
 - [x] for `plain_text_password: mysecretpassword123  # Alternatively, use 'passwd:' with a hashed password for better security`, what kind of hashing?
- - `openssl passwd -6 'mysecretpassword123'` (`-6` is `SHA-512`) 
+ - `openssl passwd -6 'mysecretpassword123'` (`-6` is `SHA-512`)
+- [ ] is `phone_home` useful to us in a wifi-only world, no ethernet?
+- [ ] is [package management](https://docs.cloud-init.io/en/latest/reference/modules.html#package-update-upgrade-install) useful to us given ordering with wifi? does it necessarily happen post-network-success?
