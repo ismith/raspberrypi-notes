@@ -20,6 +20,15 @@ The [https://www.raspberrypi.com/news/cloud-init-on-raspberry-pi-os/](https://ww
 though there is also [the upstream cloud-init documentation](https://docs.cloud-init.io/en/latest/reference/modules.html).
 
 ## Goals/Questions
-- [ ] what do I put on the sdcard for first boot (after using Raspberry Pi Imager)?
-- [ ] can I use this on a previously-set-up card to add ssh keys, wifi networks, etc?
-- [ ] can I use Raspberry Pi Imager to flash the sdcard _and add this file_, or do I need to do those two separately?
+- [x] what do I put on the sdcard for first boot (after using Raspberry Pi Imager)?
+ - `/boot/firmware/{user-data,network-config}` - make a template or two, please
+- [x] can I use this on a previously-set-up card to add ssh keys, wifi networks, etc?
+ - sorta; change the value in `/boot/firmware/meta-data/instance-id` to re-run, and be aware anything not idempotent will be re-run (eg, no appending to files without checking idempotency)
+- [x] can I use Raspberry Pi Imager to flash the sdcard _and add this file_, or do I need to do those two separately?
+  - it's technically possible from the cli - `rpi-imager \
+  --cli --debug \
+  --cloudinit-userdata cloudinit/user-data \
+  --cloudinit-networkconfig cloudinit/network-config \
+  /path/to/raspios.img /dev/diskN` - but might be simpler to flash-then-edit `/boot/firmware/{user-data,network-config}`.
+- [x] for `plain_text_password: mysecretpassword123  # Alternatively, use 'passwd:' with a hashed password for better security`, what kind of hashing?
+ - `openssl passwd -6 'mysecretpassword123'` (`-6` is `SHA-512`) 
